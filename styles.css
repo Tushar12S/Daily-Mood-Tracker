@@ -1,0 +1,103 @@
+/* Fonts & base setup */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 2rem;
+    transition: background 0.4s ease;
+    background: linear-gradient(to bottom right, #fefefe, #e8f0ff);
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  
+  .container {
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  /* Hide radio inputs */
+  input[type="radio"] {
+    display: none;
+  }
+  
+  /* Mood options layout */
+  .mood-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  /* Mood button styles */
+  .mood {
+    cursor: pointer;
+    padding: 1.5rem;
+    font-size: 2rem;
+    border-radius: 16px;
+    background: #ffffff;
+    width: 140px;
+    height: 140px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+  }
+  
+  .mood:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .mood span {
+    font-size: 1.1rem;
+    margin-top: 0.6rem;
+    font-weight: 500;
+  }
+  
+  /* Change background color when selected using :has (for supported browsers) */
+  body:has(#happy:checked) {
+    background: linear-gradient(to right, #fdf497, #fdf497, #fd5949);
+  }
+  
+  body:has(#sad:checked) {
+    background: linear-gradient(to right, #89f7fe, #66a6ff);
+  }
+  
+  body:has(#excited:checked) {
+    background: linear-gradient(to right, #f857a6, #ff5858);
+  }
+  
+  body:has(#calm:checked) {
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  }
+  
+  /* Highlight the selected mood */
+  #happy:checked + label,
+  #sad:checked + label,
+  #excited:checked + label,
+  #calm:checked + label {
+    border: 2px solid #333;
+    background: rgba(255, 255, 255, 0.95);
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .mood {
+      width: 110px;
+      height: 110px;
+      font-size: 1.5rem;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+  
